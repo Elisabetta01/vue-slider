@@ -32,7 +32,10 @@
                         <img v-for="(element, index) in slides"
                         v-bind:src="element.image" 
                         v-bind:class="(currentActive == index) ? 'active' : '' "
-                        v-bind:alt="slides[currentActive].title" />
+                        v-bind:alt="slides[currentActive].title" 
+                        @click="changeImg(index)"
+                        />
+                        
                     </div>
                     <!-- <div class="thumb">
                         <img src="./assets/img/02.webp" alt="Ratchet & Clank" />

@@ -60,6 +60,10 @@ const { createApp } = Vue
                     this.currentActive = 0
                 }
             },
+
+            changeImg(i){
+                this.currentActive = i
+            },
         }
  
 
