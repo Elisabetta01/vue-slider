@@ -43,6 +43,10 @@ const { createApp } = Vue
         }
     },
 
+        created(){
+            this.autoScroll()
+        },
+
         methods: {
 
             //al click delle frecce vanno avanti o indietro le immagini
@@ -64,6 +68,13 @@ const { createApp } = Vue
             changeImg(i){
                 this.currentActive = i
             },
+
+            autoScroll(){
+                this.autoscroll = setInterval( ()=>{
+                    this.next()
+                }, 3000 )
+            },
+    
         }
  
 
