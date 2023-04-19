@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img v-bind:src="slides[currentActive].image" alt="Spiderman" />
+                    <img v-bind:src="slides[currentActive].image" v-bind:alt="slides[currentActive].title" />
                     <div class="text">
                         <h3>{{slides[currentActive].title}}</h3>
                         <p>{{slides[currentActive].text}}</p>
@@ -28,9 +28,11 @@
                     <div class="prev" @click="prev"></div>
                     <div class="next" @click="next"></div>
 
-                    <div class="thumb active">
+                    <div class="thumb">
                         <img v-for="(element, index) in slides"
-                        v-bind:src="element.image" alt="Svezia" />
+                        v-bind:src="element.image" 
+                        v-bind:class="(currentActive == index) ? 'active' : '' "
+                        v-bind:alt="slides[currentActive].title" />
                     </div>
                     <!-- <div class="thumb">
                         <img src="./assets/img/02.webp" alt="Ratchet & Clank" />

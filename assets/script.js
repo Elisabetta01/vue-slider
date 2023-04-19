@@ -48,7 +48,7 @@ const { createApp } = Vue
             //al click delle frecce vanno avanti o indietro le immagini
             prev(){
                 if(this.currentActive == 0){
-                    this.currentActive = this.slides.image.length - 1
+                    this.currentActive = this.slides.length - 1
                 }else{
                     this.currentActive--
                 }
@@ -56,7 +56,7 @@ const { createApp } = Vue
 
             next(){
                 this.currentActive++
-                if(this.currentActive > this.slides.image.length - 1){
+                if(this.currentActive > this.slides.length - 1){
                     this.currentActive = 0
                 }
             },
