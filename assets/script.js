@@ -12,6 +12,7 @@ const { createApp } = Vue
     data() {
         return {
             currentActive: 0,
+            autoscroll: null,
         
             slides: [
                 {
@@ -74,6 +75,11 @@ const { createApp } = Vue
                     this.next()
                 }, 3000 )
             },
+
+            stopScroll(){
+                clearInterval( this.autoscroll )
+                this.autoscroll = null
+           }
     
         }
  
